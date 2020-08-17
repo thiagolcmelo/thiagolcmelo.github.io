@@ -5,9 +5,7 @@ subtitle: A basic and powerful strategy to separate spam from ham
 gh-repo: thiagolcmelo/thiagolcmelo.github.io
 gh-badge: [star, fork, follow]
 tags: [machine-learning, scikit-learn, spam-detector]
-cover-img: /assets/img/letters-in-computer.jpg
 thumbnail-img: /assets/img/road-sign-spam.jpg
-share-img: /assets/img/letters-in-computer.jpg
 comments: true
 ---
 
