@@ -14,6 +14,7 @@ We chose to stick to the Python standard library as much as possible, but there 
 
 Having said that, time to get our hands dirty reinventing some wheels!
 
+
 ## The data set
 
 [Apache SpamAssassin](https://spamassassin.apache.org/) Project maintains a nice collection of old e-mail messages that we can use. The messages age from early 2000's, and probably the scammers are way smarter now, so please don't use this in any production environment :)
@@ -91,6 +92,7 @@ print('hams:', len(glob(f'{ham_dir}/*')))  # hams: 6952
 print('spams:', len(glob(f'{spam_dir}/*')))  # spams: 2399
 {% endhighlight %}
 
+
 ## Parsing messages
 
 If you open any of these individual files, you will see they are very hard to read. This is because they are in [MIME format]()https://en.wikipedia.org/wiki/MIME. Python has a standard library that helps us to extract only the part that we care about, namely subject and body.
@@ -167,6 +169,7 @@ class EmailIterator:
         
         return SimpleEmail(subject, body)
 {% endhighlight %}
+
 
 ## Pre-processing
 
@@ -285,6 +288,7 @@ encoded_train = np.array(list(map(_encode_email, emails_train)))
 encoded_test = np.array(list(map(_encode_email, emails_test)))
 {% endhighlight %}
 
+
 ## Training a model
 
 Think about when you read an e-mail yourself and try to judge whether it is a spam or not. A good approach is to search for certain words or combination of words that you previously saw in spam e-mails. Words are just words, they are valid entities of a given language, there is nothing suspicious about them. But because you saw some of them in a certain combination and in a certain context, using a certain grammatical style, that is what makes them suspicious.
@@ -328,7 +332,7 @@ That is cool right? A recall of 89% just out of the box. Well, this also means t
 From our experience, companies prefer to flag a message as spam even when it is not than to allow a spam message into someone's inbox. For that reason we believe we seek to improve recall here.
 
 {: .box-warning}
-**Warning:** The following code might take one hour or two depending on your machine.
+**Warning:** The following code might take one hour or two to run depending on your machine.
 
 {% highlight python linenos %}
 from sklearn.model_selection import GridSearchCV
@@ -405,6 +409,7 @@ print('f1:', f1_score(labels_test, labels_pred))
 {% endhighlight %}
 
 Nice right? It seems to be generalizing quite well.
+
 
 ## Automating previous steps
 
@@ -533,6 +538,7 @@ print(classification_report(labels_test,
    macro avg     0.9653    0.9722    0.9687      1871
 weighted avg     0.9762    0.9759    0.9760      1871
 ```
+
 
 ## Conclusion
 
