@@ -4,7 +4,7 @@ title: About me
 subtitle: Alone we go fast, together we go far.
 ---
 
-My name is Thiago Melo. I am a software engineer working on the data engineering space.
+My name is Thiago Melo. I am a software engineer working on the data engineering space. I code mostly in Python, but I also know a bit of Java and Scala.
 
 ## Certifications
 
@@ -21,7 +21,7 @@ My name is Thiago Melo. I am a software engineer working on the data engineering
 
 **Backend Developer** - Dentsu Aegis Network (Dec 2018 - Present)
 
-Digital Agency: https://www.dentsuaegisnetwork.com/nl/nl
+Digital Agency: [https://www.dentsuaegisnetwork.com/nl/nl](https://www.dentsuaegisnetwork.com/nl/nl)
 
 Activities: Data integration, ETL pipelines, dashboard automation.
 
@@ -31,7 +31,7 @@ Keywords: `Python`, `Apache Airflow`, `Apache Beam`, `Google Cloud Platform`.
 
 **Software Engineer** - Rio Bravo Investimentos (Jan 2017 - Sep 2017)
 
-Asset Portfolio Management: https://riobravo.com.br
+Asset Portfolio Management: [https://riobravo.com.br](https://riobravo.com.br)
 
 Activities: Asset Portfolio and Risk report automation.
 
@@ -41,7 +41,7 @@ Keywords: `Python`, `C#`, `SQL Server`, `AngularJS`.
 
 **BI Coordinator** - Wunderman (Jun 2016 - Dec 2016)
 
-Digital Agency: https://www.wundermanthompson.com
+Digital Agency: [https://www.wundermanthompson.com](https://www.wundermanthompson.com)
 
 Activities: Digital marketing campaigns report automation.
 
@@ -51,7 +51,7 @@ Keywords: `Python`, `Apache Spark`, `Google Cloud Platform`, `TIBCO SpotFire`.
 
 **Data Engineer** - DP6 (Jul 2015 - May 2016)
 
-Digital Marketing Consultancy: http://www.dp6.com.br
+Digital Marketing Consultancy: [http://www.dp6.com.br](http://www.dp6.com.br)
 
 Activities: Google Analytics and Adobe Analytics tag management.
 
@@ -61,7 +61,7 @@ Keywords: `JavaScript`, `Python`, `Google Cloud Platform`.
 
 **Intern** - HSBC Asset Management (Sep 2013 - May 2014)
 
-Investment Bank, acquired by: https://www.bradescoasset.com.br
+Investment Bank, acquired by: [https://www.bradescoasset.com.br](https://www.bradescoasset.com.br)
 
 Activities: Asset portfolio reports automation.
 
