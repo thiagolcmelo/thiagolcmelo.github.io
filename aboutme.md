@@ -1,16 +1,17 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Alone we go fast, together we go far.
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Thiago Melo. I am a software engineer working on the data engineering space.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
+- Google Cloud Certified Professional Data Engineer
+- Python and Scala Developer
+- Master of Science in Physics
 
 ### my history
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I am a big entusiast of machine learning, understanding how the algorithms work under the hood, creating prototypes for checking new ideas, and deploying projects to production.
+
+When I was young, I dreamed about being a scientist. This dream sticked to the back of my head until my late 20's, when I finally got a master's degree in physics, and realized that maybe this thing of science was not my calling. Good thing is that my past self left a nice mathematical background to me, and I am very grateful to him.
