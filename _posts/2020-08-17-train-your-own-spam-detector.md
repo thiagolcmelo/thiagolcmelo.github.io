@@ -3,7 +3,7 @@ layout: post
 title: Train you own spam detector
 subtitle: A basic and powerful strategy to separate spam from ham
 gh-repo: thiagolcmelo/thiagolcmelo.github.io
-gh-badge: [star, fork, follow]
+gh-badge: [star, follow]
 tags: [machine-learning, scikit-learn, spam-detector]
 thumbnail-img: /assets/img/road-sign-spam.jpg
 comments: true
