@@ -258,7 +258,6 @@ for k, (train, val) in enumerate(kfold):
                                   loss='hinge'))
     ])
     
-    
     train_accuracy_ = []
     train_f1_ = []
     train_hinge_ = []
@@ -292,9 +291,9 @@ for k, (train, val) in enumerate(kfold):
     val_precision_ = precision_score(labels_val_, label_pred)
     val_recall_ = recall_score(labels_val_, label_pred)
     
-    print(', '.join([f'loss: {hinge_:04f}',
-                     f'precision: {100 * precision_:.2f}',
-                     f'recall: {100 * recall_:.2f}']))
+    print(', '.join([f'loss: {val_hinge_:04f}',
+                     f'precision: {100 * val_precision_:.2f}',
+                     f'recall: {100 * val_recall_:.2f}']))
     print()
     val_accuracy.append(val_accuracy_)
     val_f1.append(val_f1_)
