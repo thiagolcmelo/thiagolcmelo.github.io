@@ -414,7 +414,7 @@ Nice right? It seems to be generalizing quite well.
 
 ## Automating previous steps
 
-First thing, we need an easy way to encode messages, and also vary some encoding parameters as hyperparameters if we want to. For that, let's create a `MessageEncoder` estimator.
+First thing, we need an easy way to encode messages, and also vary some encoding parameters as hyperparameters if we want to. For that, let's create a `MessageEncoder` transformer.
 
 {% highlight python linenos %}
 from collections import defaultdict
