@@ -97,15 +97,14 @@ pipe_lr = Pipeline([
 
 y_pred_lr = cross_val_predict(pipe_lr, X_train, y_train,
                               cv=5, n_jobs=-1, verbose=2)
-
-print(classification_report(y_train, y_pred_lr,
-                            digits=4, target_names=classes))
-
 {% endhighlight %}
 
 Which leads to:
 
-```
+```python
+>>> print(classification_report(y_train, y_pred_lr,
+                                digits=4, target_names=classes))
+
               precision    recall  f1-score   support
 
  T-shirt/top     0.7899    0.8277    0.8083      6000
@@ -139,14 +138,14 @@ pipe_rf = Pipeline([
 
 y_pred_rf = cross_val_predict(pipe_rf, X_train, y_train,
                               cv=5, n_jobs=-1, verbose=2)
-
-print(classification_report(y_train, y_pred_rf,
-                            digits=4, target_names=classes))
 {% endhighlight %}
 
 We already get 2.73% in the f1 score.
 
-```
+```python
+>>> print(classification_report(y_train, y_pred_rf,
+                                digits=4, target_names=classes))
+
               precision    recall  f1-score   support
 
  T-shirt/top     0.8219    0.8620    0.8415      6000
@@ -182,12 +181,12 @@ pipe_vote = Pipeline([
 
 y_pred_voting = cross_val_predict(pipe_vote, X_train, y_train,
                                   cv=5, n_jobs=-1, verbose=2)
-
-print(classification_report(y_train, y_pred_voting,
-                            digits=4, target_names=classes))
 {% endhighlight %}
 
-```
+```python
+>>> print(classification_report(y_train, y_pred_voting,
+                                digits=4, target_names=classes))
+
               precision    recall  f1-score   support
 
  T-shirt/top     0.8055    0.8633    0.8334      6000
@@ -225,12 +224,12 @@ pipe_vote = Pipeline([
 
 y_pred_voting = cross_val_predict(pipe_vote, X_train, y_train,
                                   cv=5, n_jobs=-1, verbose=2)
-
-print(classification_report(y_train, y_pred_voting,
-                            digits=4, target_names=classes))
 {% endhighlight %}
 
-```
+```python
+>>> print(classification_report(y_train, y_pred_voting,
+                                digits=4, target_names=classes))
+
               precision    recall  f1-score   support
 
  T-shirt/top     0.8094    0.8613    0.8346      6000
@@ -363,15 +362,11 @@ search.fit(X_train, y_train)
 
 And the best technique according to this experiment is the Sobel, which we use to predict the test set.
 
-{% highlight python linenos %}
-y_pred = search.best_estimator_.predict(X_test)
-print(classification_report(y_test, y_pred,
-                            digits=4, target_names=classes))
-{% endhighlight %}
+```python
+>>> y_pred = search.best_estimator_.predict(X_test)
+>>> print(classification_report(y_test, y_pred,
+                                digits=4, target_names=classes))
 
-It performs in the same manner on the test set:
-
-```
               precision    recall  f1-score   support
 
  T-shirt/top     0.8142    0.8500    0.8317      1000
@@ -409,12 +404,11 @@ pipe_et = Pipeline([
 
 y_pred_et = cross_val_predict(pipe_et, X_train, y_train,
                                cv=5, n_jobs=3, verbose=3)
-
-print(classification_report(y_train, y_pred_et,
-                            digits=4, target_names=classes))
 {% endhighlight %}
 
-```
+```python
+>>> print(classification_report(y_train, y_pred_et,
+                                digits=4, target_names=classes))
               precision    recall  f1-score   support
 
 aT-shirt/top     0.8148    0.8658    0.8395      6000
@@ -472,9 +466,123 @@ And the result is displayed in the next image. Each title means `[expected label
 
 Now we can see that the model fails in images that are really hard to distinguish even for a human.
 
+## PCA
+
+Another way to simplify our problem it to use PCA (*Principal Component Analysis*), in essence, this method finds a lower dimensional space in our data set's feature space that preserves the data variance as much as possible. Our feature space is currently 784 dimensional, too high. Probably pixels of the edges of the frame are not that important, and maybe others are no important as well.
+
+Using Sciki-Learn's `PCA` encoder, we can request to preserve 95% of the data variance using the following code:
+
+{% highlight python linenos %}
+from sklearn.decomposition import PCA
+
+
+pca = PCA(n_components=0.95)
+pca.fit(X_train)
+{% endhighlight %}
+
+Our training data is a matrix `60000 x 784`. The code above computes a matrix `N' x 784`, where `N'` is the number of components required in order to keep 95% of the variance (because we asked for 95%). In the `transform` method, the original data will be multiplied by the transpose of this computed matrix, resulting in a new data set of `60000 x N'`, where `N' < 784`. We can check the variance contained in each one of the `N'` components using the property `explained_variance_ratio_`.
+
+```python
+>>> print(pca.explained_variance_ratio_.shape)
+(187, 784)
+```
+
+Which means that 187 pixels positions out of those 784 correspond to 95% of the data set information. Now we are in good shape to test even how a SVM classifier performs in the training set.
+
+{% highlight python linenos %}
+from sklearn.decomposition import PCA
+
+pipe_svm = Pipeline([
+    ('pca', PCA(n_components=0.95)),
+    ('scaler', MinMaxScaler()),
+    ('svm_clf', SVC())
+])
+
+y_pred_svm = cross_val_predict(pipe_svm, X_train, y_train,
+                               cv=5, n_jobs=5, verbose=3)
+
+{% endhighlight %}
+
+```python
+>>> print(classification_report(y_train, y_pred_svm,
+                                digits=4, target_names=classes))
+
+              precision    recall  f1-score   support
+
+ T-shirt/top     0.8322    0.8728    0.8520      6000
+     Trouser     0.9962    0.9713    0.9836      6000
+    Pullover     0.8273    0.8257    0.8265      6000
+       Dress     0.8897    0.9207    0.9049      6000
+        Coat     0.8306    0.8392    0.8349      6000
+      Sandal     0.9570    0.9752    0.9660      6000
+       Shirt     0.7500    0.6865    0.7168      6000
+     Sneaker     0.9504    0.9618    0.9561      6000
+         Bag     0.9707    0.9708    0.9708      6000
+  Ankle boot     0.9725    0.9593    0.9659      6000
+
+    accuracy                         0.8983     60000
+   macro avg     0.8977    0.8983    0.8977     60000
+weighted avg     0.8977    0.8983    0.8977     60000
+```
+
+This result is impressive, it is above [TensorFlow's](https://www.tensorflow.org/tutorials/keras/classification) accuracy for the same problem. The only problem for our argument is that SVM is not an ensemble method.
+
+To address this consistency problem, let's train a huge `VotingClassifier`. The reason we changed the `MinMaxScaler` to the `StandardScaler` is because it suits better the `LogisticRegression` model without harming the others.
+
+{% highlight python linenos %}
+from sklearn.preprocessing import StandardScaler
+
+
+pipe_vote = Pipeline([
+    ('pca', PCA(n_components=0.95)),
+    ('scaler', StandardScaler()),
+    ('voting_clf', VotingClassifier(
+        estimators=[
+            ('lr', BaggingClassifier(LogisticRegression(multi_class='ovr',
+                                                        max_iter=1000),
+                                     n_estimators=5,
+                                     n_jobs=-1)),
+            ('svm', BaggingClassifier(SVC(probability=True),
+                                      n_estimators=5,
+                                      n_jobs=-1)),
+            ('rf', RandomForestClassifier()),
+            ('erf', ExtraTreesClassifier())
+        ], voting='soft', n_jobs=-1))
+])
+
+pipe_vote.fit(X_train, y_train)
+{% endhighlight %}
+
+And the results it:
+
+```python
+>>> y_pred = pipe_vote.predict(X_test)
+>>> print(classification_report(y_test, y_pred,
+                                digits=4, target_names=classes))
+
+              precision    recall  f1-score   support
+
+aT-shirt/top     0.8120    0.8640    0.8372      1000
+     Trouser     0.9878    0.9740    0.9809      1000
+    Pullover     0.8267    0.8110    0.8188      1000
+       Dress     0.8923    0.9200    0.9060      1000
+        Coat     0.8276    0.8690    0.8478      1000
+      Sandal     0.9673    0.9460    0.9565      1000
+       Shirt     0.7446    0.6500    0.6941      1000
+     Sneaker     0.9331    0.9350    0.9341      1000
+         Bag     0.9568    0.9740    0.9653      1000
+  Ankle boot     0.9469    0.9630    0.9549      1000
+
+    accuracy                         0.8906     10000
+   macro avg     0.8895    0.8906    0.8895     10000
+weighted avg     0.8895    0.8906    0.8895     10000
+```
+
 ## Conclusion
 
-Applying edge detection was not enough to make the problem simpler in a suitable way for a `RandomForestClassifier`. But we saw that even dealing with the problem in a pixel-wise way allows for some interesting predictions.
+Applying edge detection was not enough to make the problem simpler, the right way to tackle this problem is using *Principal Component Analysis* (or PCA).
+
+We saw that dealing with the problem in a pixel-wise manner allows for some interesting predictions.
 
 ## References
 
