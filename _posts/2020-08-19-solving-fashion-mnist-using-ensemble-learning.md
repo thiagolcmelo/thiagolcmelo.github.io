@@ -9,7 +9,7 @@ thumbnail-img: /assets/img/fashion-mnist.png
 comments: true
 ---
 
-
+In this post we will try to use some ensemble methods to deal with an image classification problem. It is not the best application for these methods, but we can still find interesting results. Actually, as we will see, despite of the low capacity of the models to capture the complexity of the problem, they perform almost as good as a human would ;)
 
 ## The data set
 
