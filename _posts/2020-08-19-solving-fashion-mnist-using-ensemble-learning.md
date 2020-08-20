@@ -466,7 +466,7 @@ for i in range(4):
 plt.show()
 {% endhighlight %}
 
-And the result is displayed in the next image.
+And the result is displayed in the next image. Each title means `[expected label] - [predicted label]`
 
 ![Edge detection](/assets/img/posts/fashion-mnist/right_wrong.png){: .mx-auto.d-block :}
 
