@@ -588,3 +588,5 @@ We saw that dealing with the problem in a pixel-wise manner allows for some inte
 
 1. *Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow*, Aurélien Géron (2019). Chapter 7.
 2. [Fashion Mnist](https://www.kaggle.com/zalando-research/fashionmnist), Kaggle (2017).
+
+\sum_{i=1}^{10} t_i
