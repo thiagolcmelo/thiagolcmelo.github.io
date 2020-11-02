@@ -19,7 +19,7 @@ My name is Thiago Melo. I am a software engineer working on the data engineering
 
 ## Employment
 
-**Backend Developer** - Dentsu Aegis Network (Dec 2018 - Present)
+**Backend Developer** - Dentsu Aegis Network (Dec 2018 - Nov 2020)
 
 Digital Agency: [https://www.dentsuaegisnetwork.com/nl/nl](https://www.dentsuaegisnetwork.com/nl/nl)
 
@@ -29,7 +29,7 @@ Keywords: `Python`, `Apache Airflow`, `Apache Beam`, `Google Cloud Platform`.
 
 ---
 
-**Software Engineer** - Rio Bravo Investimentos (Jan 2017 - Sep 2017)
+**Software Engineer** - Rio Bravo Investimentos (Jan 2017 - Oct 2017)
 
 Asset Portfolio Management: [https://riobravo.com.br](https://riobravo.com.br)
 
@@ -39,7 +39,7 @@ Keywords: `Python`, `C#`, `SQL Server`, `AngularJS`.
 
 ---
 
-**BI Coordinator** - Wunderman (Jun 2016 - Dec 2016)
+**BI Coordinator** - Wunderman (Jul 2016 - Dec 2016)
 
 Digital Agency: [https://www.wundermanthompson.com](https://www.wundermanthompson.com)
 
@@ -49,7 +49,7 @@ Keywords: `Python`, `Apache Spark`, `Google Cloud Platform`, `TIBCO SpotFire`.
 
 ---
 
-**Data Engineer** - DP6 (Jul 2015 - May 2016)
+**Data Engineer** - DP6 (Jul 2015 - Jun 2016)
 
 Digital Marketing Consultancy: [http://www.dp6.com.br](http://www.dp6.com.br)
 
