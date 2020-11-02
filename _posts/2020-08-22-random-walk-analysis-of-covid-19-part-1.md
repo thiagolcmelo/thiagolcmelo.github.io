@@ -9,7 +9,7 @@ thumbnail-img: /assets/img/covid-19.jpg
 comments: true
 ---
 
-First of all, it is not a secret that we write this blog as a portfolio for skills that we have been sharpening. We understand the severity of this dataset, and we don't want to just promote ourselves without respecting all these lives that were lost during the past few months. Having said that, we hope my analysis can be useful for someone or shed some light on some topic not covered yet.
+First of all, it is not a secret that we write this blog as a portfolio for skills that we have been sharpening. We understand the severity of this dataset, and we don't want to just promote ourselves without respecting all these lives that were lost during the past few months. Having said that, we hope our analysis can be useful for someone or shed some light on some topic not covered yet.
 
 Because not all countries test new cases as it would be necessary, our main focus will be on the number of deaths, and again we would like to highlight our profound respect for all these human lives.
 
