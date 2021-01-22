@@ -4,7 +4,7 @@ title: About me
 subtitle: Alone we go fast, together we go far.
 ---
 
-My name is Thiago Melo. I am a software engineer working on the data engineering space. I code mostly in Python, but I also know a bit of Java and Scala.
+My name is Thiago Melo. I am a software engineer with experience in Python and C/C++. I also know a bit of Java and Scala.
 
 ## Certifications
 
@@ -18,6 +18,16 @@ My name is Thiago Melo. I am a software engineer working on the data engineering
 - Humboldt State University (USA), *Academic Exchange* (2014 - 2015)
 
 ## Employment
+
+**Senior Software Developer** - Luxoft (Nov 2020 - Present)
+
+Software Development Company: [https://www.luxoft.com/](https://www.luxoft.com/)
+
+Activities: Allocated at ASML for embedded software development in C/C++ and Python.
+
+Keywords: `Python`, `C/C++`, `Embedded Systems`.
+
+---
 
 **Backend Developer** - Dentsu Aegis Network (Dec 2018 - Nov 2020)
 
@@ -66,10 +76,3 @@ Investment Bank, acquired by: [https://www.bradescoasset.com.br](https://www.bra
 Activities: Asset portfolio reports automation.
 
 Keywords: `Excel`, `VBA`, `Access`.
-
-
-## My history
-
-When I was young, I dreamed about being a scientist. This dream sticked to the back of my head until my late 20's, when I finally got a master's degree in physics, and realized that maybe this thing of science was not my calling. Good thing is that my past self left a nice mathematical background to me, and I am very grateful to him.
-
-I am a big entusiast of machine learning, understanding how the algorithms work under the hood, creating prototypes for checking new ideas, and deploying projects to production.
