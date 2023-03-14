@@ -4,7 +4,7 @@ title: About me
 subtitle: Alone we go fast, together we go far.
 ---
 
-My name is Thiago Melo. I am a software engineer with experience in Python and C/C++. I also know a bit of Java and Scala.
+My name is Thiago Melo. I am a software engineer with experience in the Data Engineering and SRE domains.
 
 ## Certifications
 
@@ -19,7 +19,17 @@ My name is Thiago Melo. I am a software engineer with experience in Python and C
 
 ## Employment
 
-**Senior Software Developer** - Luxoft (Nov 2020 - Present)
+**Production Engineer** - Meta (Sep 2021 - Present)
+
+Social Media Company: [https://www.meta.com/](https://www.meta.com/)
+
+Activities: Implementing monitoring, migrating systems, making applications more reliable and efficient.
+
+Keywords: `Python`, `Hack`, `Distributed Systems`.
+
+---
+
+**Senior Software Developer** - Luxoft (Nov 2020 - Aug 2021)
 
 Software Development Company: [https://www.luxoft.com/](https://www.luxoft.com/)
 
