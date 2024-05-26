@@ -19,7 +19,17 @@ My name is Thiago Melo. I am a software engineer with experience in the Data Eng
 
 ## Employment
 
-**Production Engineer** - Meta (Sep 2021 - Present)
+**Software Engineer** - Meta (Sep 2023 - Present)
+
+Social Media Company: [https://www.meta.com/](https://www.meta.com/)
+
+Activities: Improving systems efficiency using A/B testing.
+
+Keywords: `C++`, `Python`, `Hack`, `Distributed Systems`, `A/B Testing`.
+
+---
+
+**Production Engineer** - Meta (Sep 2021 - Aug 2023)
 
 Social Media Company: [https://www.meta.com/](https://www.meta.com/)
 
